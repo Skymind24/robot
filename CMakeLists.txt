@@ -33,7 +33,7 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  DIRECTORY launch meshes models rviz worlds 
+  DIRECTORY launch models rviz worlds 
   DESTINATION share/${PROJECT_NAME}
 )
 
