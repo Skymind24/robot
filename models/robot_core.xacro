@@ -86,16 +86,20 @@
         </xacro:inertial_box> 
     </link>
 
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
+
     <!-- DRIVE WHEELS *****************************************************  -->
-    <!-- TOP LEFT WHEEL -->
-    <joint name="top_left_wheel_joint" type="continuous">
+    <!-- LEFT FRONT WHEEL -->
+    <joint name="left_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="top_left_wheel"/>
+        <child link="left_front_wheel"/>
         <origin xyz="0.097 0.068 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="top_left_wheel">
+    <link name="left_front_wheel">
         <visual>
             <origin xyz="0 0 0"/> 
             <geometry>
@@ -116,15 +120,19 @@
         </xacro:inertial_cylinder> 
     </link>
 
-    <!-- TOP RIGHT WHEEL -->
-    <joint name="top_right_wheel_joint" type="continuous">
+    <gazebo reference="left_front_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- RIGHT FRONT WHEEL -->
+    <joint name="right_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="top_right_wheel"/>
+        <child link="right_front_wheel"/>
         <origin xyz="0.097 -0.068 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="top_right_wheel">
+    <link name="right_front_wheel">
         <visual>
             <origin xyz="0 0 0"/> 
             <geometry>
@@ -145,15 +153,19 @@
         </xacro:inertial_cylinder> 
     </link>
 
-    <!-- BOTTOM LEFT WHEEL -->
-    <joint name="bottom_left_wheel_joint" type="continuous">
+    <gazebo reference="right_front_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- LEFT REAR WHEEL -->
+    <joint name="left_rear_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="bottom_left_wheel"/>
+        <child link="left_rear_wheel"/>
         <origin xyz="0 0.068 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="bottom_left_wheel">
+    <link name="left_rear_wheel">
         <visual>
             <origin xyz="0 0 0"/> 
             <geometry>
@@ -174,15 +186,19 @@
         </xacro:inertial_cylinder> 
     </link>
 
-    <!-- BOTTOM RIGHT WHEEL -->
-    <joint name="bottom_right_wheel_joint" type="continuous">
+    <gazebo reference="left_rear_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- RIGHT REAR WHEEL -->
+    <joint name="right_rear_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="bottom_right_wheel"/>
+        <child link="right_rear_wheel"/>
         <origin xyz="0 -0.068 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="bottom_right_wheel">
+    <link name="right_rear_wheel">
         <visual>
             <origin xyz="0 0 0"/> 
             <geometry>
@@ -202,6 +218,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder> 
     </link>
+
+    <gazebo reference="right_rear_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
 
 
